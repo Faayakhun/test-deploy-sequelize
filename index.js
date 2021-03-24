@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-
+const cors = require('cors')
 const sequelize = require ('./config/db')
 const User = require('./models/User')
 const routes = require('./routes')
@@ -8,6 +8,7 @@ const routes = require('./routes')
 
 const PORT = process.env.PORT || 3000
 
+app.use(cors())
 app.use(express.json())
 app.use(routes)
 
